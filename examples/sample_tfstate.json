@@ -1,0 +1,31 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.7.5",
+  "values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "module.vnet.azurerm_virtual_network.vnet",
+          "mode": "managed",
+          "type": "azurerm_virtual_network",
+          "name": "vnet",
+          "values": {
+            "id": "/subscriptions/sub-123/resourceGroups/rg-prod/providers/Microsoft.Network/virtualNetworks/vnet-prod",
+            "name": "vnet-prod",
+            "address_space": ["10.0.0.0/16"]
+          }
+        },
+        {
+          "address": "module.aks.azurerm_kubernetes_cluster.aks",
+          "mode": "managed",
+          "type": "azurerm_kubernetes_cluster",
+          "name": "aks",
+          "values": {
+            "id": "/subscriptions/sub-123/resourceGroups/rg-prod/providers/Microsoft.ContainerService/managedClusters/aks-prod",
+            "name": "aks-prod"
+          }
+        }
+      ]
+    }
+  }
+}
